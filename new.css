@@ -34,7 +34,7 @@ input[type="button"]{
     margin-left: 4px;
 }
 input[type=button]:hover {
-    background-color: #1D1B1E;
+    background-color: #0B0A0B;
     color:white;
 }
 #value
