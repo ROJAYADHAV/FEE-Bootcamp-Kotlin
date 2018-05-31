@@ -9,10 +9,10 @@
 </head>
 <body>
     <h1>Calculator</h1>
-    <div class="first">
+    <div class="first" id = "cal">
         <div id="span">
         </div>
-         <input type="number" id="value">
+         <input type="text" id="value" onkeypress="return getNumber(evt)">
     <table>
         <tr>
           <td><input type="button" value="1"></td>
