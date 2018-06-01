@@ -41,7 +41,8 @@ else if(charCode == 8){
 else if(charCode == 42 || charCode== 43 || charCode == 45 || charCode ==47){
     localStorage.result = String(eval(localStorage.getItem("result")));
     document.getElementById("value").innerHTML="";
-    localStorage.num = localStorage.getItem(result);
+    
+   // localStorage.num = localStorage.getItem(result);
     localStorage.result = localStorage.getItem("result")+String.fromCharCode(charCode);
     localStorage.display = localStorage.getItem("display")+String.fromCharCode(charCode);
    // console.log(num);
@@ -49,7 +50,7 @@ else if(charCode == 42 || charCode== 43 || charCode == 45 || charCode ==47){
     setVal();
     
 }
-else if( charCode>= 48 && charCode<=57){
+else if((charCode>= 48 && charCode<=57)|| charCode == 46){
     localStorage.result = localStorage.getItem("result")+String.fromCharCode(charCode);
     localStorage.display = localStorage.getItem("display")+String.fromCharCode(charCode);
     setVal();
@@ -60,13 +61,14 @@ else {
     setVal();
 }
 
-console.log(localStorage.getItem("display")+"d");
-console.log(localStorage.getItem("result")+"r");
-console.log(localStorage.getItem("num")+"n");
 }
 
 
 function setVal(){
     document.getElementById("span").innerHTML = localStorage.getItem("display");
-document.getElementById("value").innerHTML= localStorage.getItem("num");
+document.getElementById("value").innerHTML= localStorage.getItem("result");
+
+console.log(localStorage.getItem("display")+"  --display");
+console.log(localStorage.getItem("result")+" --result");
+//console.log(localStorage.getItem("num")+"n");
 }
