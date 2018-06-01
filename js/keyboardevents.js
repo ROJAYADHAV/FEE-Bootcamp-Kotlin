@@ -1,4 +1,5 @@
 
+
 var result ="";
 var display="";
 var num="";
@@ -63,12 +64,25 @@ else {
 
 }
 
+/*if(charCode==13){
+    console.log(eval(result));
+}
+else {
+var res = String(String.fromCharCode(charCode));
+  result = result + res;
+  console.log(result);
+  document.getElementById("span").innerHTML=result;
+  
+}*/
+
+
+
+}
+
 
 function setVal(){
     document.getElementById("span").innerHTML = localStorage.getItem("display");
 document.getElementById("value").innerHTML= localStorage.getItem("result");
 
-console.log(localStorage.getItem("display")+"  --display");
-console.log(localStorage.getItem("result")+" --result");
-//console.log(localStorage.getItem("num")+"n");
+
 }
