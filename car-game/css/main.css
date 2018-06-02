@@ -5,15 +5,11 @@ body {
 canvas {
     
     border: 2px solid black;
-    width: 800;
-    height: 500;
     background: gray;
 }
 
-/*#canvasDiv{
-    height: 600px;
-    width: 600px;
-}*/
+
+
 
 .button {
     background-color: #4CAF50; /* Green */

@@ -10,14 +10,14 @@
 <body>
     <h1>BUCKLE UP<h1>
         <div id=canvasDiv>
-    <canvas id="playArea" > </canvas>
+    <canvas id="playArea" height="600" width="600"> </canvas>
         </div>
     
     <div id="controls">
     
         <input type="button" class="button" id = "start" onclick="init()" value="Let's GO">
-        <input type="button" class="button button1" id = "pause" value="PAUSE">
-        <input type="button" class="button button2" id = "stop" onclick ="gameOver()" value="STOP">
+        <input type="button" class="button button1" id = "pause" onclick = "pauseGame()" value="PAUSE">
+        <input type="button" class="button button2" id = "stop" onclick ="stopGame()" value="STOP">
     </div>
 
     <script type="text/javascript" src="js/script.js"></script>
