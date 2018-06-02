@@ -37,7 +37,7 @@ function init() {
 function loadImages() {
     
     head = new Image();
-    head.src = 'images/car.gif'; 
+    head.src = 'images/harry4.gif'; 
 }
 
 
@@ -47,7 +47,7 @@ function doDrawing() {
     
     if (inGame) {
 
-        ctx.drawImage(head, car_x, car_y,40,30);
+        ctx.drawImage(head, car_x, car_y,80,80);
 
           
     } else {
@@ -160,3 +160,4 @@ onkeydown = function(e) {
         leftDirection = false;
     }        
 };
+
