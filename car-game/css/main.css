@@ -5,8 +5,23 @@ body {
 canvas {
     
     border: 2px solid black;
+<<<<<<< HEAD
+=======
+/*width: 1000;
+    height: 1000;*/
+>>>>>>> c2206d6c95d247d9aa5341f57e50a83f8eb355ef
     background: gray;
 }
+p{
+    float: left;
+}
+h3.title {
+    font-size: 50px;
+    font-weight: bold;
+    margin: 0;		
+    display: block;
+    float: left;
+  }
 
 
 
@@ -29,3 +44,44 @@ canvas {
 .button2{
     background-color: #f44336;
 }
+
+
+.container {
+    width: 800px;
+    margin: 0 auto; }
+  
+  .scores-container {
+    float: right;
+    text-align: right;
+  }
+  
+  .score-container, .best-container {
+    position: relative;
+    display: inline-block;
+    background: #bbada0;
+    padding: 15px 25px;
+    font-size: 25px;
+    height: 25px;
+    line-height: 47px;
+    font-weight: bold;
+    border-radius: 3px;
+    color: white;
+    margin-top: 8px;
+    text-align: center; }
+    .score-container:after, .best-container:after {
+      position: absolute;
+      width: 100%;
+      top: 10px;
+      left: 0;
+      text-transform: uppercase;
+      font-size: 13px;
+      line-height: 13px;
+      text-align: center;
+      color: #eee4da;
+   }
+  .score-container:after {
+    content: "Score"; }
+  
+  .best-container:after {
+    content: "Best"; }
+  
