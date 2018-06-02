@@ -5,11 +5,6 @@ body {
 canvas {
     
     border: 2px solid black;
-<<<<<<< HEAD
-=======
-/*width: 1000;
-    height: 1000;*/
->>>>>>> c2206d6c95d247d9aa5341f57e50a83f8eb355ef
     background: gray;
 }
 p{
