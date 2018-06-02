@@ -13,7 +13,7 @@ var paused=false;
 var game;
 var start=true;
 
-
+/*
 var img_obj = {
     'source': null,
     'current': 0,
@@ -21,7 +21,7 @@ var img_obj = {
     'width': 40,
     'height': 30
 };
-
+*/
 
 var count=0;
 
@@ -37,7 +37,7 @@ const C_WIDTH = 600;
 
 const SPACE =32;
 
-var DELAY=300;
+var DELAY=500;
 
 
 function init() {
@@ -107,6 +107,7 @@ function gameOver() {
    ctx.font = 'normal bold 18px Helvetica';
     
 ctx.fillText('Game over', C_WIDTH/2, C_HEIGHT/2);
+console.log(count);
 }
 
 function move() {
@@ -170,6 +171,10 @@ function gameCycle() {
         checkCollision();
         move();
         doDrawing();
+        if(count%100==0 && DELAY>50){
+            DELAY=DELAY-50;
+            console.log(DELAY);
+        }
         game = setTimeout("gameCycle()", DELAY);
     }
 }
