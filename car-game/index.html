@@ -12,12 +12,12 @@
         <div id=canvasDiv>
     <canvas id="playArea" > </canvas>
         </div>
-    <br>
+    
     <div id="controls">
     
-        <input type="button" class="button" id = "start" value="Let's GO">
+        <input type="button" class="button" id = "start" onclick="init()" value="Let's GO">
         <input type="button" class="button button1" id = "pause" value="PAUSE">
-        <input type="button" class="button button2" id = "stop" value="STOP">
+        <input type="button" class="button button2" id = "stop" onclick ="gameOver()" value="STOP">
     </div>
 
     <script type="text/javascript" src="js/script.js"></script>
