@@ -17,8 +17,8 @@ const LEFT_KEY = 37;
 const RIGHT_KEY = 39;
 const UP_KEY = 38;
 const DOWN_KEY = 40;
-const C_HEIGHT = 500;
-const C_WIDTH = 800; 
+const C_HEIGHT = 600;
+const C_WIDTH = 600; 
 const DELAY = 140;
 
 
@@ -59,12 +59,12 @@ function doDrawing() {
 function gameOver() {
     
     ctx.fillStyle = 'blue';
-    ctx.fill();
-   // ctx.textBaseline = 'middle'; 
-   // ctx.textAlign = 'center'; 
-   // ctx.font = 'normal bold 18px serif';
+    //ctx.fill();
+    ctx.textBaseline = 'middle'; 
+    ctx.textAlign = 'center'; 
+    ctx.font = 'normal bold 18px Helvetica';
     
-    //ctx.fillText('Game over', C_WIDTH/2, C_HEIGHT/2);
+    ctx.fillText('Game over', C_WIDTH/2, C_HEIGHT/2);
 }
 
 function move() {
