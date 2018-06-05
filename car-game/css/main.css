@@ -1,22 +1,35 @@
 
 body {
     text-align:center;
+     
 }
 canvas {
     
     border: 2px solid black;
-    width: 800;
-    height: 500;
-    background: gray;
+    height: "600";
+    width: "600";
+
+}
+p{
+    float: left;
+}
+h3.title {
+    font-size: 50px;
+    font-weight: bold;
+    margin: 0;		
+    display: block;
+    float: left;
+    color: #E2B4B4;
+  }
+p{
+    text-align: center;
+    color: #E2B4B4;
 }
 
-/*#canvasDiv{
-    height: 600px;
-    width: 600px;
-}*/
+
 
 .button {
-    background-color: #4CAF50; /* Green */
+    background-color: #353449; /* Green */
     color:white;
     border: none;
     padding: 15px 32px;
@@ -26,10 +39,65 @@ canvas {
     font-size: 16px;
     margin: 4px 2px;
     cursor: pointer;
+    border-radius: 8px;
+    position: relative;
 }
 .button1{
-    background-color:   #008CBA;
+    background-color:   #353449;
+    border-radius: 8px;
 }
 .button2{
-    background-color: #f44336;
+    background-color: #353449;
+    border-radius: 8px;
 }
+
+
+.container {
+    width: 800px;
+    margin: 0 auto; }
+  
+  .scores-container {
+    float: right;
+    text-align: right;
+    height: 50px;
+    width:140px; 
+  }
+  
+  .score-container, .best-container {
+    position: relative;
+    display: inline-block;
+    
+    padding: 15px 25px;
+    font-size: 25px;
+    height: 25px;
+    line-height: 47px;
+    font-weight: bold;
+    border-radius: 3px;
+    color: white;
+    margin-top: 8px;
+    text-align: center; }
+    .score-container:after, .best-container:after {
+      position: absolute;
+      width: 100%;
+      top: 10px;
+      left: 0;
+      text-transform: uppercase;
+      font-size: 13px;
+      line-height: 13px;
+      text-align: center;
+      color: #eee4da;
+      height: 30px;
+      
+   }
+  .score-container:after {
+    content: "Score"; }
+  
+  .best-container:after {
+    content: "Best"; }
+  
+
+    .row1{
+        height: 90px;
+        width:800px;
+    }
+    
