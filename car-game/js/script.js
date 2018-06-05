@@ -271,7 +271,7 @@ function scoreCal(){
       bestScore();
 
     a=[];
-    document.getElementById("best").innerHTML=Math.round(best/1000);
+    document.getElementById("best").innerHTML=Math.round(localStorage.getItem("best-score")/1000);
    // localStorage["best-score"]=String(document.getElementById("best").value);
     document.getElementById("score").innerHTML=Math.round(score/1000);
 }
@@ -281,7 +281,7 @@ function bestScore(){
     best=localStorage.getItem("best-score");
     console.log(score+"score");
     
-    if(localStorage.getItem(best!==null)){
+    if(best!==null||best!=undefined){
        
         if(score>best){
             localStorage.setItem("best-score",score);
@@ -291,5 +291,7 @@ function bestScore(){
     else{
         //var alltimebest=String(score);
         localStorage.setItem("best-score",score);
+        best=score;
+        
     }
 }
