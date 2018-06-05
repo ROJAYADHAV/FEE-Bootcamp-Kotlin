@@ -1,4 +1,9 @@
 
+var best;
+var score=0;
+var a=[];
+var d=new Date();
+
 var canvas;
 var ctx;
 
@@ -37,11 +42,23 @@ const C_WIDTH = 600;
 
 const SPACE =32;
 
-var DELAY=500;
-
-
+var DELAY=300;
+ 
 function init() {
-    
+     leftDirection = false;
+     rightDirection = true;
+     upDirection = false;
+     downDirection = false;
+     paused=false
+     inGame=true;
+     count=0;
+    //a=[];
+    score=0;
+    best= document.getElementById("best").value;
+    document.getElementById("score").innerHTML=0;
+   // document.getElementById("best").innerHTML=document.getElementById("best").value;
+    d=new Date();
+    a.push(Number(d.getTime()));
     canvas = document.getElementById('playArea');
     ctx = canvas.getContext('2d');
     //ctx.clearRect(0, 0, C_WIDTH, C_HEIGHT);
@@ -52,6 +69,8 @@ function init() {
     loadImages();
    
     setTimeout("gameCycle()", DELAY);
+
+    
 }   
 
 function loadImages() {
@@ -61,7 +80,7 @@ function loadImages() {
        // img_obj.source = img;  // we set the image source for our object.
     //}
     //img.src = 'img/filename.png'; // contains an image of size 256x16
-    img.src = 'images/car.gif'; 
+    img.src = 'images/right.gif'; 
     // with 16 frames of size 16x16
 }
 
@@ -83,12 +102,12 @@ function doDrawing() {
     
     if (inGame) {
           if(start == true){
-           ctx.drawImage(img, 0, 0,40,30);
+           ctx.drawImage(img, 0, 0,100,90);
           // draw_anim(ctx, 0, 0, img_obj);
             start = false;
           }
           else {
-        ctx.drawImage(img, car_x, car_y,40,30);
+        ctx.drawImage(img, car_x, car_y,100,90);
         //draw_anim(ctx, car_x, car_y, img_obj);
           }
           
@@ -99,7 +118,9 @@ function doDrawing() {
 }
 
 function gameOver() {
-    
+    d=new Date();
+    a.push(Number(d.getTime()));
+    //console.log(a);
     ctx.fillStyle = 'blue';
 
     ctx.textBaseline = 'middle'; 
@@ -107,7 +128,7 @@ function gameOver() {
    ctx.font = 'normal bold 18px Helvetica';
     
 ctx.fillText('Game over', C_WIDTH/2, C_HEIGHT/2);
-console.log(count);
+     scoreCal();
 }
 
 function move() {
@@ -171,8 +192,8 @@ function gameCycle() {
         checkCollision();
         move();
         doDrawing();
-        if(count%100==0 && DELAY>50){
-            DELAY=DELAY-50;
+        if(count%10==0 && DELAY>10){
+            DELAY=DELAY-10;
             console.log(DELAY);
         }
         game = setTimeout("gameCycle()", DELAY);
@@ -216,11 +237,18 @@ onkeydown = function(e) {
 };
 
 function pauseGame(){
+    d=new Date();
     if(!paused){
+        a.push(Number(d.getTime()));
+        
         game = clearTimeout(game);
         paused=true;
+       // a.push(Number(d.getTime()));
+        
     }
     else if(paused) {
+        a.push(Number(d.getTime()));
+        
         game = setTimeout("gameCycle()", DELAY);
         
           paused=false;
@@ -228,5 +256,40 @@ function pauseGame(){
 }
 function stopGame(){
     inGame=false;
+    
+    
     gameOver();
+}
+
+function scoreCal(){
+   // console.log(a);
+    for(var i=0;i<a.length-1;i++){
+        score+=a[i+1]-a[i];
+        
+    }
+    
+      bestScore();
+
+    a=[];
+    document.getElementById("best").innerHTML=Math.round(best/1000);
+   // localStorage["best-score"]=String(document.getElementById("best").value);
+    document.getElementById("score").innerHTML=Math.round(score/1000);
+}
+
+
+function bestScore(){
+    best=localStorage.getItem("best-score");
+    console.log(score+"score");
+    
+    if(localStorage.getItem(best!==null)){
+       
+        if(score>best){
+            localStorage.setItem("best-score",score);
+            best=score;
+        }
+    }
+    else{
+        //var alltimebest=String(score);
+        localStorage.setItem("best-score",score);
+    }
 }
