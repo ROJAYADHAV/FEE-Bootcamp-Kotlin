@@ -1,36 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-  equiv="X-UA-Compatible" content="ie=edge">
     <title>CAR</title>
-    <link  rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/main.css">
+    
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
-<body>
+
+<body background = "images/backgroundharry.png">
     <div class="container">
-    <div class="heading">
-        <h3 class="title">BUCKLE UP!</h3>
-        <div class="scores-container">
-          <div class="score-container">0</div>
-          <div class="best-container">0</div>
-    </div>
-        <div><br><br><br><b><i>
-    <p style="font-family:Comic Sans MS" >Tighten your seat bealt and join the fun!!</p></i></b>
-    
-    </div>
-        <div id=canvasDiv>
-    <canvas id="playArea" height="600" width="600"> </canvas>
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-8 col-sm-12">
+                <div class="heading">
+                    <h3 class="title">LETS QUIDDITCH!</h3>
+                    <div class="scores-container">
+                        <div class="score-container" id = "score">0</div>
+                        <div class="best-container" id ="best">0</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2"></div>
         </div>
-    
-    <div id="controls">
-    
-        <input type="button" class="button" id = "start" onclick="init()" value="Let's GO">
-        <input type="button" class="button button1" id = "pause" onclick = "pauseGame()" value="PAUSE">
-        <input type="button" class="button button2" id = "stop" onclick ="stopGame()" value="STOP">
-    </div>
-</div>
-    <script type="text/javascript" src="js/script.js"></script>
-    
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-6"><br><b><i>
+    <p style="font-family:Comic Sans MS" >Don't chase the quaffle if you see the Snitch!!</p></i></b>
+            </div>
+            <div class="col-md-2"></div>
+        </div> 
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div id=canvasDiv class="col-md-8">
+                <canvas id="playArea" height="600" width="600"> </canvas>
+            </div>
+            <div class="col-md-2"></div>
+        </div>
+        <div class="row">
+            <div class="col-md-3"></div>
+            <div id="controls" class="clo-md-6">
+
+                <input type="button" class="button" id="start" onclick="init()" value="Let's GO">
+                <input type="button" class="button button1" id="pause" onclick="pauseGame()" value="PAUSE">
+                <input type="button" class="button button2" id="stop" onclick="stopGame()" value="STOP">
+            </div>
+            <div class="col-md-3"></div>
+        </div>
+        <script type="text/javascript" src="js/script.js"></script>
+
 </body>
+
 </html>
