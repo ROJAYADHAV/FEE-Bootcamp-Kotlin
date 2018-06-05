@@ -1,6 +1,7 @@
 
 body {
     text-align:center;
+     
 }
 canvas {
     
@@ -28,7 +29,7 @@ p{
 
 
 .button {
-    background-color: #4CAF50; /* Green */
+    background-color: #353449; /* Green */
     color:white;
     border: none;
     padding: 15px 32px;
@@ -38,12 +39,16 @@ p{
     font-size: 16px;
     margin: 4px 2px;
     cursor: pointer;
+    border-radius: 8px;
+    position: relative;
 }
 .button1{
-    background-color:   #008CBA;
+    background-color:   #353449;
+    border-radius: 8px;
 }
 .button2{
-    background-color: #f44336;
+    background-color: #353449;
+    border-radius: 8px;
 }
 
 

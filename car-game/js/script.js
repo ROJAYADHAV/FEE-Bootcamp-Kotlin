@@ -43,7 +43,8 @@ const C_WIDTH = 600;
 const SPACE =32;
 
 var DELAY=300;
- 
+img = new Image();
+
 function init() {
      leftDirection = false;
      rightDirection = true;
@@ -52,6 +53,7 @@ function init() {
      paused=false
      inGame=true;
      count=0;
+     DELAY=300;
     //a=[];
     score=0;
     best= document.getElementById("best").value;
@@ -75,7 +77,6 @@ function init() {
 
 function loadImages() {
     
-    img = new Image();
    // img.onload = function () { // Triggered when image has finished loading.
        // img_obj.source = img;  // we set the image source for our object.
     //}
@@ -209,6 +210,9 @@ onkeydown = function(e) {
         leftDirection = true;
         upDirection = false;
         downDirection = false;
+        img.src = 'images/left.gif'; 
+        
+        
     }
 
     if ((key == RIGHT_KEY) && (!leftDirection)) {
@@ -216,6 +220,8 @@ onkeydown = function(e) {
         rightDirection = true;
         upDirection = false;
         downDirection = false;
+        img.src = 'images/right.gif'; 
+        
     }
 
     if ((key == UP_KEY) && (!downDirection)) {
@@ -223,6 +229,8 @@ onkeydown = function(e) {
         upDirection = true;
         rightDirection = false;
         leftDirection = false;
+        img.src = 'images/top.gif'; 
+        
     }
 
     if ((key == DOWN_KEY) && (!upDirection)) {
@@ -230,6 +238,8 @@ onkeydown = function(e) {
         downDirection = true;
         rightDirection = false;
         leftDirection = false;
+        img.src = 'images/bottom.gif'; 
+        
     }    
     if(key == SPACE){
         pauseGame();
