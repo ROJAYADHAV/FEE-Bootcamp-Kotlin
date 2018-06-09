@@ -1,10 +1,10 @@
-import { batsman } from './batsman';
-import { bowler } from './bowler';
+import { Batsman } from './batsman';
+import { Bowler } from './bowler';
 import { Ball } from './ball';
 //var input:Array<Ball>;
-var batsmanarray: Array<batsman>;
-var bowlerarray: Array<bowler>;
-var totalscore: number = 0;
+var batsmanArray: Array<Batsman>;
+var bowlerArray: Array<Bowler>;
+var totalScore: number = 0;
 var input: Array<Ball> = [
     {
         runsScored: 0,
@@ -56,65 +56,65 @@ var input: Array<Ball> = [
 
 ]
 for (let i = 0; i < input.length; i++) {
-    var bt = findbatsman(input[i].batsmanName);
-    var bw = findbowler(input[i].bowlerName);
+    var bt = findBatsman(input[i].batsmanName);
+    var bw = findBowler(input[i].bowlerName);
     bt.runsScored += input[i].runsScored;
-    bw.ballsbowled.push(input[i].runsScored);
-    bt.ballsfaced++;
+    bw.ballsBowled.push(input[i].runsScored);
+    bt.ballsFaced++;
     bt.bowler = input[i].bowlerName;
     if (input[i].isOut) {
-        bt.fieldername = input[i].dismissalInfo.fielderName;
-        bt.notout = false;
-        bw.wicketcount++;
+        bt.fielderName = input[i].dismissalInfo.fielderName;
+        bt.notOut = false;
+        bw.wicketCount++;
     }
     else {
         if (input[i].isExtra) {
-            totalscore += input[i].extraInfo.runsOffered;
-            bw.ballsbowled.push(input[i].extraInfo.runsOffered);
+            totalScore += input[i].extraInfo.runsOffered;
+            bw.ballsBowled.push(input[i].extraInfo.runsOffered);
         }
     }
     
 
 
 }
-function findbatsman(bname) {
-    if (batsmanarray.length != 0) {
-        for (let i = 0; i < batsmanarray.length; i++)
-            if (batsmanarray[i].name == bname)
-                return batsmanarray[i];
+function findBatsman(bname) {
+    if (batsmanArray.length != 0) {
+        for (let i = 0; i < batsmanArray.length; i++)
+            if (batsmanArray[i].name == bname)
+                return batsmanArray[i];
     }
     else {
          let temp=new batsman(bname);
-        batsmanarray.push(temp);
+        batsmanArray.push(temp);
         return temp;
     }
 }
-function findbowler(bname) {
-    if (bowlerarray.length != 0) {
-        for (let i = 0; i < bowlerarray.length; i++)
-            if (bowlerarray[i].name == bname)
-                return bowlerarray[i];
+function findBowler(bname) {
+    if (bowlerArray.length != 0) {
+        for (let i = 0; i < bowlerArray.length; i++)
+            if (bowlerArray[i].name == bname)
+                return bowlerArray[i];
     }
     else {
-        let temp=new bowler(bname)
-        bowlerarray.push(temp);
+        let temp=new Bowler(bname)
+        bowlerArray.push(temp);
         return temp;
     }
 }
-function displayresult()
+function displayResult()
 {
-    for(let i=0;i<batsmanarray.length;i++)
+    for(let i=0;i<batsmanArray.length;i++)
         {
-            console.log(batsmanarray[i].name);
-            if(batsmanarray[i].notout)
+            console.log(batsmanArray[i].name);
+            if(batsmanArray[i].notOut)
                 {
                     console.log("not out");
                 }
                 else
                     {
-                        console.log("c"+ batsmanarray[i].fieldername + "b" + batsmanarray[i].bowler);
+                        console.log("c"+ batsmanArray[i].fielderName + "b" + batsmanArray[i].bowler);
                     }
-                console.log(batsmanarray[i].runsScored+"("+ batsmanarray[i].ballsfaced+ ")");
+                console.log(batsmanArray[i].runsScored+"("+ batsmanArray[i].ballsFaced+ ")");
                     
         }
         console.log("total score:");

@@ -1,27 +1,27 @@
-export class bowler {
+export class Bowler {
     name: string;
-    runsgiven: number;
-   wicketcount:number;
-   ballsbowled:Array<number>;
-   maidenovers:number;
+    runsGiven: number;
+   wicketCount:number;
+   ballsBowled:Array<number>;
+   maidenOvers:number;
     constructor(name: string) {
         this.name = name;
-        this.runsgiven = 0;
-        this.wicketcount = 0;
+        this.runsGiven = 0;
+        this.wicketCount = 0;
     }
-    get numberOfRunsgiven() {
-        return this.runsgiven;
+    get numberOfRunsGiven() {
+        return this.runsGiven;
     }
-    get numberOfwickets() {
-        return this.wicketcount;
+    get numberOfWickets() {
+        return this.wicketCount;
     }
     addRunsGiven(run: number) {
-        this.runsgiven += run;
+        this.runsGiven += run;
     }
     addWickets(w: number) {
-        this.wicketcount += w;
+        this.wicketCount += w;
     }
-    movercal()
+    moverCal()
     {
        
 
