@@ -1,4 +1,9 @@
 
+var best;
+var score=0;
+var a=[];
+var d=new Date();
+
 var canvas;
 var ctx;
 
@@ -37,11 +42,29 @@ const C_WIDTH = 600;
 
 const SPACE =32;
 
-var DELAY=500;
+var DELAY=300;
+img = new Image();
 
+window.onload=function(){
+    document.getElementById("best").innerHTML=Math.round(localStorage.getItem("best-score")/1000);
+}
 
 function init() {
-    
+     leftDirection = false;
+     rightDirection = true;
+     upDirection = false;
+     downDirection = false;
+     paused=false
+     inGame=true;
+     count=0;
+     DELAY=300;
+    //a=[];
+    score=0;
+    best= document.getElementById("best").value;
+    document.getElementById("score").innerHTML=0;
+   
+    d=new Date();
+    a.push(Number(d.getTime()));
     canvas = document.getElementById('playArea');
     ctx = canvas.getContext('2d');
     //ctx.clearRect(0, 0, C_WIDTH, C_HEIGHT);
@@ -52,20 +75,25 @@ function init() {
     loadImages();
    
     setTimeout("gameCycle()", DELAY);
+
+    
 }   
 
 function loadImages() {
     
 <<<<<<< HEAD
+<<<<<<< HEAD
     head = new Image();
     head.src = 'images/harry4.gif'; 
 =======
     img = new Image();
+=======
+>>>>>>> b062c503ff8a43eb3a7c1cf266da445d926936a1
    // img.onload = function () { // Triggered when image has finished loading.
        // img_obj.source = img;  // we set the image source for our object.
     //}
     //img.src = 'img/filename.png'; // contains an image of size 256x16
-    img.src = 'images/car.gif'; 
+    img.src = 'images/right.gif'; 
     // with 16 frames of size 16x16
 >>>>>>> d87443fa397fe4df99614cb98b0aade4459e0728
 }
@@ -93,12 +121,12 @@ function doDrawing() {
 
 =======
           if(start == true){
-           ctx.drawImage(img, 0, 0,40,30);
+           ctx.drawImage(img, 0, 0,110,100);
           // draw_anim(ctx, 0, 0, img_obj);
             start = false;
           }
           else {
-        ctx.drawImage(img, car_x, car_y,40,30);
+        ctx.drawImage(img, car_x, car_y,110,100);
         //draw_anim(ctx, car_x, car_y, img_obj);
           }
 >>>>>>> d87443fa397fe4df99614cb98b0aade4459e0728
@@ -110,7 +138,9 @@ function doDrawing() {
 }
 
 function gameOver() {
-    
+    d=new Date();
+    a.push(Number(d.getTime()));
+    //console.log(a);
     ctx.fillStyle = 'blue';
 
     ctx.textBaseline = 'middle'; 
@@ -118,7 +148,7 @@ function gameOver() {
    ctx.font = 'normal bold 18px Helvetica';
     
 ctx.fillText('Game over', C_WIDTH/2, C_HEIGHT/2);
-console.log(count);
+     scoreCal();
 }
 
 function move() {
@@ -182,8 +212,8 @@ function gameCycle() {
         checkCollision();
         move();
         doDrawing();
-        if(count%100==0 && DELAY>50){
-            DELAY=DELAY-50;
+        if(count%10==0 && DELAY>10){
+            DELAY=DELAY-10;
             console.log(DELAY);
         }
         game = setTimeout("gameCycle()", DELAY);
@@ -199,6 +229,9 @@ onkeydown = function(e) {
         leftDirection = true;
         upDirection = false;
         downDirection = false;
+        img.src = 'images/left.gif'; 
+        
+        
     }
 
     if ((key == RIGHT_KEY) && (!leftDirection)) {
@@ -206,6 +239,8 @@ onkeydown = function(e) {
         rightDirection = true;
         upDirection = false;
         downDirection = false;
+        img.src = 'images/right.gif'; 
+        
     }
 
     if ((key == UP_KEY) && (!downDirection)) {
@@ -213,6 +248,8 @@ onkeydown = function(e) {
         upDirection = true;
         rightDirection = false;
         leftDirection = false;
+        img.src = 'images/top.gif'; 
+        
     }
 
     if ((key == DOWN_KEY) && (!upDirection)) {
@@ -221,10 +258,15 @@ onkeydown = function(e) {
         rightDirection = false;
         leftDirection = false;
 <<<<<<< HEAD
+<<<<<<< HEAD
     }        
 };
 
 =======
+=======
+        img.src = 'images/bottom.gif'; 
+        
+>>>>>>> b062c503ff8a43eb3a7c1cf266da445d926936a1
     }    
     if(key == SPACE){
         pauseGame();
@@ -232,11 +274,18 @@ onkeydown = function(e) {
 };
 
 function pauseGame(){
+    d=new Date();
     if(!paused){
+        a.push(Number(d.getTime()));
+        
         game = clearTimeout(game);
         paused=true;
+       // a.push(Number(d.getTime()));
+        
     }
     else if(paused) {
+        a.push(Number(d.getTime()));
+        
         game = setTimeout("gameCycle()", DELAY);
         
           paused=false;
@@ -244,6 +293,46 @@ function pauseGame(){
 }
 function stopGame(){
     inGame=false;
+    
+    
     gameOver();
 }
+<<<<<<< HEAD
 >>>>>>> d87443fa397fe4df99614cb98b0aade4459e0728
+=======
+
+function scoreCal(){
+   // console.log(a);
+    for(var i=0;i<a.length-1;i++){
+        score+=a[i+1]-a[i];
+        
+    }
+    //score = Math.round(score/1000);
+      bestScore();
+
+    a=[];
+    document.getElementById("best").innerHTML=Math.round(localStorage.getItem("best-score"));
+   // localStorage["best-score"]=String(document.getElementById("best").value);
+    document.getElementById("score").innerHTML=Math.round(score/1000);
+}
+
+
+function bestScore(){
+    best=localStorage.getItem("best-score");
+    console.log(score+"score");
+    
+    if(best!==null||best!=undefined){
+       
+        if(score>best){
+            localStorage.setItem("best-score",score);
+            best=score;
+        }
+    }
+    else{
+        //var alltimebest=String(score);
+        localStorage.setItem("best-score",score);
+        best=score;
+        
+    }
+}
+>>>>>>> b062c503ff8a43eb3a7c1cf266da445d926936a1

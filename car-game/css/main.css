@@ -1,18 +1,28 @@
 
 body {
     text-align:center;
+<<<<<<< HEAD
    /* background-image: url("images/harry2.jpg"); */
     background-size: "500px 500px"
+=======
+     
+>>>>>>> b062c503ff8a43eb3a7c1cf266da445d926936a1
 }
 canvas {
     
     border: 2px solid black;
+<<<<<<< HEAD
 <<<<<<< HEAD
 /*width: 1000;
     height: 1000;*/
 =======
     background: gray;
 >>>>>>> d87443fa397fe4df99614cb98b0aade4459e0728
+=======
+    height: "600";
+    width: "600";
+
+>>>>>>> b062c503ff8a43eb3a7c1cf266da445d926936a1
 }
 
 /*#playArea{
@@ -28,13 +38,17 @@ h3.title {
     margin: 0;		
     display: block;
     float: left;
+    color: #E2B4B4;
   }
-
+p{
+    text-align: center;
+    color: #E2B4B4;
+}
 
 
 
 .button {
-    background-color: #4CAF50; /* Green */
+    background-color: #353449; /* Green */
     color:white;
     border: none;
     padding: 15px 32px;
@@ -44,12 +58,16 @@ h3.title {
     font-size: 16px;
     margin: 4px 2px;
     cursor: pointer;
+    border-radius: 8px;
+    position: relative;
 }
 .button1{
-    background-color:   #008CBA;
+    background-color:   #353449;
+    border-radius: 8px;
 }
 .button2{
-    background-color: #f44336;
+    background-color: #353449;
+    border-radius: 8px;
 }
 
 
@@ -60,12 +78,14 @@ h3.title {
   .scores-container {
     float: right;
     text-align: right;
+    height: 50px;
+    width:140px; 
   }
   
   .score-container, .best-container {
     position: relative;
     display: inline-block;
-    background: #bbada0;
+    
     padding: 15px 25px;
     font-size: 25px;
     height: 25px;
@@ -85,6 +105,8 @@ h3.title {
       line-height: 13px;
       text-align: center;
       color: #eee4da;
+      height: 30px;
+      
    }
   .score-container:after {
     content: "Score"; }
@@ -92,3 +114,9 @@ h3.title {
   .best-container:after {
     content: "Best"; }
   
+
+    .row1{
+        height: 90px;
+        width:800px;
+    }
+    
