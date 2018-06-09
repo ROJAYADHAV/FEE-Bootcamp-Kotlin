@@ -103,5 +103,19 @@ function findbowler(bname) {
 }
 function displayresult()
 {
-
+    for(let i=0;i<batsmanarray.length;i++)
+        {
+            console.log(batsmanarray[i].name);
+            if(batsmanarray[i].notout)
+                {
+                    console.log("not out");
+                }
+                else
+                    {
+                        console.log("c"+ batsmanarray[i].fieldername + "b" + batsmanarray[i].bowler);
+                    }
+                console.log(batsmanarray[i].runsScored+"("+ batsmanarray[i].ballsfaced+ ")");
+                    
+        }
+        console.log("total score:");
 }
