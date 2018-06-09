@@ -7,8 +7,12 @@ body {
 canvas {
     
     border: 2px solid black;
+<<<<<<< HEAD
 /*width: 1000;
     height: 1000;*/
+=======
+    background: gray;
+>>>>>>> d87443fa397fe4df99614cb98b0aade4459e0728
 }
 
 /*#playArea{
@@ -26,10 +30,8 @@ h3.title {
     float: left;
   }
 
-/*#canvasDiv{
-    height: 600px;
-    width: 600px;
-}*/
+
+
 
 .button {
     background-color: #4CAF50; /* Green */
