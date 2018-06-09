@@ -45,6 +45,10 @@ const SPACE =32;
 var DELAY=300;
 img = new Image();
 
+window.onload=function(){
+    document.getElementById("best").innerHTML=Math.round(localStorage.getItem("best-score")/1000);
+}
+
 function init() {
      leftDirection = false;
      rightDirection = true;
@@ -58,7 +62,7 @@ function init() {
     score=0;
     best= document.getElementById("best").value;
     document.getElementById("score").innerHTML=0;
-   // document.getElementById("best").innerHTML=document.getElementById("best").value;
+   
     d=new Date();
     a.push(Number(d.getTime()));
     canvas = document.getElementById('playArea');
@@ -103,12 +107,12 @@ function doDrawing() {
     
     if (inGame) {
           if(start == true){
-           ctx.drawImage(img, 0, 0,100,90);
+           ctx.drawImage(img, 0, 0,110,100);
           // draw_anim(ctx, 0, 0, img_obj);
             start = false;
           }
           else {
-        ctx.drawImage(img, car_x, car_y,100,90);
+        ctx.drawImage(img, car_x, car_y,110,100);
         //draw_anim(ctx, car_x, car_y, img_obj);
           }
           
@@ -277,11 +281,11 @@ function scoreCal(){
         score+=a[i+1]-a[i];
         
     }
-    
+    //score = Math.round(score/1000);
       bestScore();
 
     a=[];
-    document.getElementById("best").innerHTML=Math.round(localStorage.getItem("best-score")/1000);
+    document.getElementById("best").innerHTML=Math.round(localStorage.getItem("best-score"));
    // localStorage["best-score"]=String(document.getElementById("best").value);
     document.getElementById("score").innerHTML=Math.round(score/1000);
 }
