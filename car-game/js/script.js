@@ -39,11 +39,6 @@ const UP_KEY = 38;
 const DOWN_KEY = 40;
 const C_HEIGHT = 600;
 const C_WIDTH = 600; 
-<<<<<<< HEAD
-const DELAY = 140;
-
-=======
->>>>>>> 1bf80db9f2dfe9b744439a82b5bb27c5a3337e4d
 
 const SPACE =32;
 
@@ -128,14 +123,6 @@ function gameOver() {
     a.push(Number(d.getTime()));
     //console.log(a);
     ctx.fillStyle = 'blue';
-<<<<<<< HEAD
-    //ctx.fill();
-    ctx.textBaseline = 'middle'; 
-    ctx.textAlign = 'center'; 
-    ctx.font = 'normal bold 18px Helvetica';
-    
-    ctx.fillText('Game over', C_WIDTH/2, C_HEIGHT/2);
-=======
 
     ctx.textBaseline = 'middle'; 
     ctx.textAlign = 'center'; 
@@ -143,7 +130,6 @@ function gameOver() {
     
 ctx.fillText('Game over', C_WIDTH/2, C_HEIGHT/2);
      scoreCal();
->>>>>>> 1bf80db9f2dfe9b744439a82b5bb27c5a3337e4d
 }
 
 function move() {
