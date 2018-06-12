@@ -1,23 +1,25 @@
-export class batsman {
+export class Batsman {
     name: string;
     runsScored: number;
-    ballsfaced: number;
-    fieldername: string;
+    ballsFaced: number;
+    fielderName: string;
+    runout:boolean;
     bowler: string;
-    notout: boolean;
+    notOut: boolean;
     constructor(name: string) {
         this.name = name;
         this.runsScored = 0;
-        this.ballsfaced = 0;
-        this.notout = false;
+        this.ballsFaced = 0;
+        this.notOut = true;
+        this.runout=false;
     }
-    get numberOfRuns() {
-        return this.runsScored;
-    }
-    get numberOfballsfaced() {
-        return this.ballsfaced;
-    }
-    addRuns(run: number) {
-        this.runsScored += run;
-    }
+    // get numberOfRuns() {
+    //     return this.runsScored;
+    // }
+    // get numberOfBallsFaced() {
+    //     return this.ballsFaced;
+    // }
+    // addRuns(run: number) {
+    //     this.runsScored += run;
+    // }
 }
