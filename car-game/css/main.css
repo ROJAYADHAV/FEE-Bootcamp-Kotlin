@@ -1,15 +1,34 @@
 
 body {
     text-align:center;
+<<<<<<< HEAD
+   /* background-image: url("images/harry2.jpg"); */
+    background-size: "500px 500px"
+=======
      
+>>>>>>> b062c503ff8a43eb3a7c1cf266da445d926936a1
 }
 canvas {
     
     border: 2px solid black;
+<<<<<<< HEAD
+<<<<<<< HEAD
+/*width: 1000;
+    height: 1000;*/
+=======
+    background: gray;
+>>>>>>> d87443fa397fe4df99614cb98b0aade4459e0728
+=======
     height: "600";
     width: "600";
 
+>>>>>>> b062c503ff8a43eb3a7c1cf266da445d926936a1
 }
+
+/*#playArea{
+    background-image: url("images/backgroundharry.jpg");
+}
+*/
 p{
     float: left;
 }

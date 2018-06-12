@@ -2,8 +2,8 @@ var batsman = /** @class */ (function () {
     function batsman(name) {
         this.name = name;
         this.runsScored = 0;
-        this.ballsfaced = 0;
-        this.notout = false;
+        this.ballsFaced = 0;
+        this.notOut = false;
     }
     Object.defineProperty(batsman.prototype, "numberOfRuns", {
         get: function () {
@@ -14,7 +14,7 @@ var batsman = /** @class */ (function () {
     });
     Object.defineProperty(batsman.prototype, "numberOfballsfaced", {
         get: function () {
-            return this.ballsfaced;
+            return this.ballsFaced;
         },
         enumerable: true,
         configurable: true

@@ -81,12 +81,21 @@ function init() {
 
 function loadImages() {
     
+<<<<<<< HEAD
+<<<<<<< HEAD
+    head = new Image();
+    head.src = 'images/harry4.gif'; 
+=======
+    img = new Image();
+=======
+>>>>>>> b062c503ff8a43eb3a7c1cf266da445d926936a1
    // img.onload = function () { // Triggered when image has finished loading.
        // img_obj.source = img;  // we set the image source for our object.
     //}
     //img.src = 'img/filename.png'; // contains an image of size 256x16
     img.src = 'images/right.gif'; 
     // with 16 frames of size 16x16
+>>>>>>> d87443fa397fe4df99614cb98b0aade4459e0728
 }
 
 /*
@@ -106,6 +115,11 @@ function doDrawing() {
     ctx.clearRect(0, 0, C_WIDTH, C_HEIGHT);
     
     if (inGame) {
+<<<<<<< HEAD
+
+        ctx.drawImage(head, car_x, car_y,80,80);
+
+=======
           if(start == true){
            ctx.drawImage(img, 0, 0,110,100);
           // draw_anim(ctx, 0, 0, img_obj);
@@ -115,6 +129,7 @@ function doDrawing() {
         ctx.drawImage(img, car_x, car_y,110,100);
         //draw_anim(ctx, car_x, car_y, img_obj);
           }
+>>>>>>> d87443fa397fe4df99614cb98b0aade4459e0728
           
     } else {
 
@@ -242,8 +257,16 @@ onkeydown = function(e) {
         downDirection = true;
         rightDirection = false;
         leftDirection = false;
+<<<<<<< HEAD
+<<<<<<< HEAD
+    }        
+};
+
+=======
+=======
         img.src = 'images/bottom.gif'; 
         
+>>>>>>> b062c503ff8a43eb3a7c1cf266da445d926936a1
     }    
     if(key == SPACE){
         pauseGame();
@@ -274,6 +297,9 @@ function stopGame(){
     
     gameOver();
 }
+<<<<<<< HEAD
+>>>>>>> d87443fa397fe4df99614cb98b0aade4459e0728
+=======
 
 function scoreCal(){
    // console.log(a);
@@ -309,3 +335,4 @@ function bestScore(){
         
     }
 }
+>>>>>>> b062c503ff8a43eb3a7c1cf266da445d926936a1
